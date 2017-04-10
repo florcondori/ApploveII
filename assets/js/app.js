@@ -6,7 +6,8 @@ window.addEventListener('load', function(){
 
 		arrayFigure[4].onclick= function(e){
 			e.preventDefault();
-		console.log(this.nextElementSibling);
+			
 this.nextElementSibling.nextElementSibling.classList.add("mostrar-figure");
+document.body.classList.add("overflow-hidden");
 }
 });
