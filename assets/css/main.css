@@ -133,7 +133,7 @@ a>img{
 	right: 0;
 	bottom: 0;
 	text-align: center;
-	padding-top: 10%;
+	padding-top: 5%;
 }
 .box-work:hover{
 	cursor: pointer;
@@ -142,13 +142,13 @@ a>img{
 	overflow: hidden;
 }
 .mostrar-img{
-	width: 450px;
+	width: 650px;
 	border: 14px solid white;
 }
 .cerrar-img{
 	position: absolute;
-	top: 25%;
-	right: 35%;
+	top: 15%;
+	right: 28%;
 	width: 24px;
 	height: 4px;
 	background: rgb(1,223,165);
@@ -159,12 +159,35 @@ a>img{
 	content: "";
 	position: absolute;
 	top: 34%;
-	right: 9%;
+	right: 11%;
 	width: 24px;
 	height: 4px;
 	background: rgb(1,223,165);
 	z-index: 2000;
 	transform: rotate(-86deg);
+}
+.siguiente-img{
+	display: block;
+	position: absolute;
+	top: 50%;
+	right: 28%;
+	width: 24px;
+	height: 4px;
+	background: rgb(1,223,165);
+	z-index: 2000;
+	transform: rotate(45deg);
+}
+.siguiente-img:after{
+	display: block;
+	content: "";
+	position: absolute;
+	top: 11px;
+	right: -11px;
+	width: 24px;
+	height: 4px;
+	background: rgb(1,223,165);
+	z-index: 2000;
+	transform: rotate(-90deg);
 }
 footer{
 	text-align: center;
