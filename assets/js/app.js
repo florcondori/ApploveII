@@ -30,9 +30,11 @@ window.addEventListener('load', function(){
 	//obtener todas los enlaces con la clase "js-ancla-img"
 	var arrayFigure = document.getElementsByClassName("js-ancla-img");
 	var divMostrarImg = document.getElementById("div-mostrar-img");
-	arrayFigure[0].onclick= function(e){
+	for(var i=0; i<arrayFigure.length; i++){
+		arrayFigure[i].onclick = mostrarImagenSeleccionada;
+	}
+	function mostrarImagenSeleccionada(e){
 		e.preventDefault();
-		alert("hola");
 		document.body.classList.add("overflow-hidden");					
 		divMostrarImg.classList.add("mostrar-figure");
 		//obtener la url de la img para crear la etiqueta img
@@ -45,7 +47,7 @@ window.addEventListener('load', function(){
 		var aspa = document.createElement("a");
 		aspa.classList.add("cerrar-img");
 		divMostrarImg.appendChild(aspa);
-
+		//Al ser Click a "X" se quitaran todas las clases adquiridas al momento de crearlas
 		aspa.addEventListener("click", function(){
 			this.parentNode.classList.remove("mostrar-figure");
 			this.previousElementSibling.remove("mostrar-img");

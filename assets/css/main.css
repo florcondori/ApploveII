@@ -96,12 +96,16 @@ h5{
 h6{
 	margin: 5px;
 }
+h2+h4{
+	padding: 0px 150px;
+}
 #work{
 	text-align: center;
 	padding: 70px 10px;
 }
 h4+img{
-	width: 400px;
+	margin-top: 20px;
+	width: 600px;
 }
 .box-work{
 	display: inline-block;
