@@ -145,10 +145,15 @@ a>img{
 	width: 650px;
 	border: 14px solid white;
 }
+.div-contenedor-img{
+	position:relative;
+	display: inline-block;
+	margin:0;
+}
 .cerrar-img{
 	position: absolute;
-	top: 15%;
-	right: 28%;
+	top: 5%;
+	right: 5%;
 	width: 24px;
 	height: 4px;
 	background: rgb(1,223,165);
@@ -169,8 +174,8 @@ a>img{
 .siguiente-img{
 	display: block;
 	position: absolute;
-	top: 50%;
-	right: 28%;
+	top: 45%;
+	right: 5%;
 	width: 24px;
 	height: 4px;
 	background: rgb(1,223,165);

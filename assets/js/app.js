@@ -25,42 +25,51 @@ window.addEventListener('load', function(){
 		figure.appendChild(figcaption);
 
 		documentFragment.appendChild(figure);
-	});
+	});	
 	divContenedorFigure.appendChild(documentFragment);
+
 	//obtener todas los enlaces con la clase "js-ancla-img"
 	var arrayFigure = document.getElementsByClassName("js-ancla-img");
 	var divMostrarImg = document.getElementById("div-mostrar-img");
 	for(var i=0; i<arrayFigure.length; i++){
 		arrayFigure[i].onclick = mostrarImagenSeleccionada;
 	}
+
 	function mostrarImagenSeleccionada(e){
 		e.preventDefault();
 		document.body.classList.add("overflow-hidden");					
 		divMostrarImg.classList.add("mostrar-figure");
 		//obtener la url de la img para crear la etiqueta img
 		var urlImg = this.firstChild.getAttribute("src");
-		console.log(urlImg);
+
+		var div = document.createElement("div");
+		div.classList.add("div-contenedor-img");
 		var nuevaImg = document.createElement("img");
 		nuevaImg.setAttribute("src",urlImg);
 		nuevaImg.classList.add("mostrar-img");		
-		divMostrarImg.appendChild(nuevaImg);
+		div.appendChild(nuevaImg);
+
 		//crear el "X" para cerrar la pantalla
 		var aspa = document.createElement("a");
 		aspa.classList.add("cerrar-img");
-		divMostrarImg.appendChild(aspa);
+		div.appendChild(aspa);
 
 		var siguiente = document.createElement("a");
 		siguiente.classList.add("siguiente-img");
 		siguiente.style.display = "block";
-		divMostrarImg.appendChild(siguiente);
+		div.appendChild(siguiente);
+
+		divMostrarImg.appendChild(div);
 		//Al ser Click a "X" se quitaran todas las clases adquiridas al momento de crearlas
 		aspa.addEventListener("click", function(){
-			this.parentNode.classList.remove("mostrar-figure");
+			divMostrarImg.classList.remove("mostrar-figure");
+			this.parentNode.classList.remove("div-contenedor-img");
 			this.previousElementSibling.remove("mostrar-img");
 			document.body.classList.remove("overflow-hidden");
 			this.classList.remove("cerrar-img");
 			this.parentNode.removeChild(aspa);
 			console.log(this.nextSibling);
+			divMostrarImg.removeChild(div);
 			siguiente.style.display="none";
 		});
 
@@ -75,5 +84,5 @@ window.addEventListener('load', function(){
 			this.parentNode.firstChild.src = "assets/images/"+arrayImagenes[index+1];
 		});
 	};
-
 });
+
