@@ -68,7 +68,6 @@ window.addEventListener('load', function(){
 			document.body.classList.remove("overflow-hidden");
 			this.classList.remove("cerrar-img");
 			this.parentNode.removeChild(aspa);
-			console.log(this.nextSibling);
 			divMostrarImg.removeChild(div);
 			siguiente.style.display="none";
 		});
